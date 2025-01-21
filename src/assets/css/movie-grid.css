@@ -89,6 +89,15 @@
     height: auto;
   }
 
+  .container:active .front {
+    transform: rotateY(-180deg);
+  }
+  
+  .container:active .back {
+    transform: rotateY(0deg);
+  }
+  
+
 }
 
 @media screen and (max-width: 523px) {
