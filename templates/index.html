@@ -16,8 +16,10 @@
 </head>
 
 <body>
+  <div class="top" id="welcome"></div>
   <header>
-    <div class="logo">
+    
+    <div class="logo" >
       <img src="../src/assets/img/cinema.png" alt="Logo Cinema Paradiso">
     </div>
     <button class="hamburger" aria-label="Menu">
@@ -25,12 +27,12 @@
     </button>
     <nav class="mobile-nav hidden">
       <ul>
-        <li><a href="#">Welcome</a></li>
-        <li><a href="#">New Movies</a></li>
-        <li><a href="#">My Top 5 of the Year</a></li>
-        <li><a href="#">Oldies But Goldies</a></li>
-        <li><a href="#">The Final Cut Club</a></li>
-        <li><a href="#">Contact Me</a></li>
+        <li><a href="#welcome">Welcome</a></li>
+        <li><a href="#newM">New Movies</a></li>
+        <li><a href="#top5">My Top 5 of the Year</a></li>
+        <li><a href="#oldGold">Oldies But Goldies</a></li>
+        <li><a href="#final">The Final Cut Club</a></li>
+        <li><a href="#contact">Contact Me</a></li>
       </ul>
     </nav>
   </header>
@@ -48,7 +50,7 @@
 
 
   <div class="svg-container">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 4 1440 320">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 4 1440 320" id="newM">
       <path fill="#5A7D7C" fill-opacity="1"
         d="M0,128L60,122.7C120,117,240,107,360,101.3C480,96,600,96,720,133.3C840,171,960,245,1080,245.3C1200,245,1320,171,1380,133.3L1440,96L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z">
       </path>
@@ -107,7 +109,7 @@
     </div>
   </section>
   <div class="svg-container">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" id="top5">
       <path fill="#232C33" fill-opacity="1"
         d="M0,64L60,96C120,128,240,192,360,181.3C480,171,600,85,720,90.7C840,96,960,192,1080,208C1200,224,1320,160,1380,128L1440,96L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z">
       </path>
@@ -116,7 +118,7 @@
   <section class="mainSection" id="topFive">
     <h3>My Top 5 of the Year</h3>
     <p>Here you'll find my favorite movies of the year. If you don't find something that catches your interest, you
-      can always rely on <a href="#">the good old classics</a>.</p>
+      can always rely on <a href="#oldies">the good old classics</a>.</p>
     <div class="container-accordion">
       <div class="gallery-wrap">
         <div class="item item-1">
@@ -167,7 +169,7 @@
     </div>
   </section>
   <div class="svg-container">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" id="oldGold">
       <path fill="#DADFF7" fill-opacity="1"
         d="M0,192L48,202.7C96,213,192,235,288,213.3C384,192,480,128,576,96C672,64,768,64,864,64C960,64,1056,64,1152,74.7C1248,85,1344,107,1392,117.3L1440,128L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z">
       </path>
@@ -289,7 +291,7 @@
   </section>
 
   <div class="svg-container">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" id="final">
       <path fill="#5A7D7C" fill-opacity="1"
         d="M0,32L48,53.3C96,75,192,117,288,117.3C384,117,480,75,576,74.7C672,75,768,117,864,144C960,171,1056,181,1152,181.3C1248,181,1344,171,1392,165.3L1440,160L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z">
       </path>
@@ -333,7 +335,7 @@
     </div>
   </section>
   <div class="svg-container">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" id="contact">
       <path fill="#232C33" fill-opacity="1"
         d="M0,64L48,58.7C96,53,192,43,288,64C384,85,480,139,576,181.3C672,224,768,256,864,256C960,256,1056,224,1152,181.3C1248,139,1344,85,1392,58.7L1440,32L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z">
       </path>

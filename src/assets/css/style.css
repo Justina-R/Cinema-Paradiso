@@ -5,6 +5,7 @@
 }
 
 * {
+  scroll-behavior: smooth;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -17,6 +18,10 @@ ul {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.top {
+  display: hidden;
 }
 
 /* HEADER */
@@ -74,7 +79,8 @@ h2 {
   flex-direction: column;
   justify-content: center;
   gap: 25px;
-  padding: 4%;
+  padding: 0 4%;
+
 }
 
 #mainTitle {
@@ -94,6 +100,10 @@ svg {
   text-align: right;
   background-color: #dadff7;
   color: #232c33;
+}
+
+#topFive a {
+  color: #5a7d7c;
 }
 
 #oldies {
