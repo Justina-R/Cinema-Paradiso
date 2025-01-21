@@ -118,7 +118,7 @@ footer {
   background-color: #232c33;
   display: flex;
   justify-content: space-between;
-  padding: 4% 10%;
+  padding: 5%;
   color: #dadff7;
 }
 
@@ -190,7 +190,7 @@ footer {
   }
 
   footer {
-    padding: 4% 8%;
+    padding: 5%;
   }
   
   .socialMedia {
@@ -225,14 +225,14 @@ footer {
   }
 
   footer {
-    padding: 5%;
+    padding: 3%;
   }
   
   .socialMedia {
     font-size: 15px;
   }
   .icons-footer {
-    font-size: 23px;
+    font-size: 25px;
   }
   
   .blogInfo {
@@ -241,10 +241,6 @@ footer {
   
   .blogInfo p{
     font-size: 12px;
-  }
-
-  .blog-logo {
-    display: none;
   }
 
   
