@@ -1,0 +1,6 @@
+Flask
+flask-mail
+pydantic
+pydantic[email]
+requests
+python-dotenv
