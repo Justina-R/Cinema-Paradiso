@@ -51,7 +51,7 @@
   visibility: visible; 
 }
 
-
+/* 
 .item-1 {
   background-image: url("../img/theFallGuy.jpg");
 }
@@ -70,7 +70,7 @@
 
 .item-5 {
   background-image: url("../img/babygirl.jpg");
-}
+} */
 
 @media screen and (max-width: 480px) {
   .container-accordion {

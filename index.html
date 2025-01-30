@@ -6,12 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cinema Paradiso | Movies and More</title>
 
-  <link rel="stylesheet" href="src/assets/css/style.css" media="all" />
-  <link rel="stylesheet" href="src/assets/css/forms.css" media="all" />
-  <link rel="stylesheet" href="src/assets/css/movie-grid.css" media="all" />
-  <link rel="stylesheet" href="src/assets/css/carousel.css" media="all" />
-  <link rel="stylesheet" href="src/assets/css/acordion.css" media="all" />
-  <link rel="shortcut icon" href="src/assets/img/cinema.png" type="image/x-icon">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/forms.css') }}" media="all" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" media="all" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/movie-grid.css') }}" media="all" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/acordion.css') }}" media="all" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/carousel.css') }}" media="all" />
+  <link rel="shortcut icon" href="{{ url_for('static', filename='img/cinema.png') }}" type="image/x-icon">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
@@ -20,7 +22,9 @@
   <header>
     
     <div class="logo" >
-      <img src="src/assets/img/cinema.png" alt="Logo Cinema Paradiso">
+
+      <img src="{{ url_for('static', filename='img/cinema.png') }}" alt="Logo Cinema Paradiso">
+
     </div>
     <button class="hamburger" aria-label="Menu">
       ☰
@@ -48,7 +52,6 @@
     <h2>The stuff that dreams are made of.</h2>
   </section>
 
-
   <div class="svg-container">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 4 1440 320" id="newM">
       <path fill="#5A7D7C" fill-opacity="1"
@@ -63,47 +66,17 @@
 
     <div class="container-cards">
       <div class="card-carousel">
-        <div class="card" id="1">
-          <div class="card-description">
-            <h3>Nosferatu</h3>
-            <p>A gothic tale of obsession between a haunted young woman and the terrifying vampire infatuated with her,
-              causing untold horror in its wake.</p>
-          </div>
-        </div>
-        <div class="card" id="2">
-          <div class="card-description">
-            <h3>Babygirl</h3>
-            <p>A high-powered CEO puts her career and family on the line when she begins a torrid affair with her
-              much-younger intern.</p>
-          </div>
-        </div>
-        <div class="card" id="3">
-          <div class="card-description">
-            <h3>We Live in Time</h3>
-            <p>Almut and Tobias are brought together in a surprise encounter that
-              changes their lives. Through snapshots of their life together -- falling for each other, building a home,
-              becoming a family -- a difficult truth is revealed that rocks its foundation. As they embark on a path
-              challenged by the limits of time, they learn to cherish each moment of the unconventional route their love
-              story has taken.</p>
-          </div>
-        </div>
-        <div class="card" id="4">
-          <div class="card-description">
-            <h3>Mufasa: The Lion King</h3>
-            <p>Mufasa, a young lion cub separated from his parents by a flood, finds himself
-              rescued by another cub named Taka. They form a strong bond despite their differing backgrounds, but their
-              friendship is tested when a threat to their pride forces them to confront their pasts and determine their
-              true loyalties.</p>
-          </div>
-        </div>
-        <div class="card" id="5">
-          <div class="card-description">
-            <h3>A Real Pain</h3>
-            <p>"A Real Pain" follows mismatched cousins David (Jesse Eisenberg) and Benji (Kieran Culkin) as they
-              reunite for a tour through Poland to honor their beloved grandmother, but their adventure takes a dark
-              turn when the odd couple's old tensions resurface against the backdrop of their family history.</p>
-          </div>
-        </div>
+        {% if newMovies %}
+          {% for newMovie in newMovies %}
+            <div class="card" style="background-image: url('{{ newMovie.get('poster_path') }}');">
+              <div class="card-description">
+                <h3>{{ newMovie.get('title') }}</h3>
+                <p>{{ newMovie.get('overview') }}</p>
+              </div>
+            </div>
+          {% endfor %}
+        {% endif %}
+
       </div>
       <a href="#" class="visuallyhidden card-controller">Carousel controller</a>
     </div>
@@ -121,50 +94,18 @@
       can always rely on <a href="#oldies">the good old classics</a>.</p>
     <div class="container-accordion">
       <div class="gallery-wrap">
-        <div class="item item-1">
-          <div class="item-description">
-            <h3>The Fall Guy</h3>
-            <p>He's a stuntman, and like everyone in the stunt community, he gets blown up, shot, crashed, thrown
-              through windows and dropped from the highest of heights, all for our entertainment. And now, fresh off an
-              almost career-ending accident, this working-class hero has to track down a missing movie star, solve a
-              conspiracy and try to win back the love of his life while still doing his day job. What could possibly go
-              right?</p>
-          </div>
-        </div>
-        <div class="item item-2">
-          <div class="item-description">
-            <h3>We Live in Time</h3>
-            <p>Almut and Tobias are brought together in a surprise encounter that
-              changes their lives. Through snapshots of their life together -- falling for each other, building a home,
-              becoming a family -- a difficult truth is revealed that rocks its foundation. As they embark on a path
-              challenged by the limits of time, they learn to cherish each moment of the unconventional route their love
-              story has taken.</p>
-          </div>
-        </div>
-        <div class="item item-3">
-          <div class="item-description">
-            <h3>Mufasa: The Lion King</h3>
-            <p>Mufasa, a young lion cub separated from his parents by a flood, finds himself
-              rescued by another cub named Taka. They form a strong bond despite their differing backgrounds, but their
-              friendship is tested when a threat to their pride forces them to confront their pasts and determine their
-              true loyalties.</p>
-          </div>
-        </div>
-        <div class="item item-4">
-          <div class="item-description">
-            <h3>A Real Pain</h3>
-            <p>"A Real Pain" follows mismatched cousins David (Jesse Eisenberg) and Benji (Kieran Culkin) as they
-              reunite for a tour through Poland to honor their beloved grandmother, but their adventure takes a dark
-              turn when the odd couple's old tensions resurface against the backdrop of their family history.</p>
-          </div>
-        </div>
-        <div class="item item-5">
-          <div class="item-description">
-            <h3>Babygirl</h3>
-            <p>A high-powered CEO puts her career and family on the line when she begins a torrid affair with her
-              much-younger intern.</p>
-          </div>
-        </div>
+
+        {% if topFives %}
+          {% for topFive in topFives %}
+            <div class="item" style="background-image: url('{{ topFive.get('poster_path') }}');">
+              <div class="item-description">
+                <h3>{{ topFive.get('title') }}</h3>
+                <p>{{ topFive.get('overview') }}</p>
+              </div>
+            </div>
+          {% endfor %} 
+        {% endif %}
+
       </div>
     </div>
   </section>
@@ -182,111 +123,21 @@
 
     <div class="grid-container">
 
-      <div class="container">
-        <div class="front" style="background-image: url(src/assets/img/africanQueen.jpg)"></div>
-        <div class="back">
-          <div class="inner">
-            <h3>The African Queen</h3>
-            <p>During World War I, a missionary witnesses her brother's death at the hands of German soldiers. She
-              only has the help of a boat captain with whom she frequently argues but eventually falls in love.
-            </p>
-          </div>
-        </div>
-      </div>
+      {% if oldies %}
+          {% for oldie in oldies %}
+            <div class="container">
+              <div class="front" style="background-image: url('{{ oldie.get('poster_path') }}');"></div>
+                <div class="back">
+                  <div class="inner">
+                    <h3>{{ oldie.get('title') }}</h3>
+                    <p>{{ oldie.get('overview') }}</p>
+                  </div>
+                </div>
+            </div>
+          {% endfor %} 
+        {% endif %}
 
 
-      <div class="container">
-        <div class="front" style="background-image: url(src/assets/img/casablanca.jpg)"></div>
-        <div class="back">
-          <div class="inner">
-            <h3>Casablanca</h3>
-            <p>The story of Rick Blaine, a cynical world-weary ex-patriate who runs a nightclub in Casablanca, Morocco
-              during the early stages of WWII.
-            </p>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="container">
-        <div class="front" style="background-image: url(src/assets/img/taxiDriver.jpg)"></div>
-        <div class="back">
-          <div class="inner">
-            <h3>Taxi Driver</h3>
-            <p>Travis Bickle is an ex-Marine and Vietnam War veteran living in New York City. As he suffers from
-              insomnia, he spends his time working as a taxi driver at night, watching porn movies at seedy cinemas
-              during the day.
-            </p>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="container">
-        <div class="front" style="background-image: url(src/assets/img/deadPoets.jpg)"></div>
-        <div class="back">
-          <div class="inner">
-            <h3>The Dead Poets Society</h3>
-            <p>Painfully shy Todd Anderson has been sent to the school where his popular older brother was
-              valedictorian. His roommate, Neil Perry, although exceedingly bright and popular, is very much under the
-              thumb of his overbearing father.
-            </p>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="container">
-        <div class="front" style="background-image: url(src/assets/img/rearWindow.webp)"></div>
-        <div class="back">
-          <div class="inner">
-            <h3>The Rear Window</h3>
-            <p>Professional photographer L.B. "Jeff" Jefferies breaks his leg while getting an action shot at an auto
-              race. Confined to his New York apartment, he spends his time looking out of the rear window observing the
-              neighbors.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="container">
-        <div class="front" style="background-image: url(src/assets/img/godfather.webp)"></div>
-        <div class="back">
-          <div class="inner">
-            <h3>The Godfather</h3>
-            <p>The Godfather "Don" Vito Corleone is the head of the Corleone mafia family in New York. He is at the
-              event of his daughter's wedding. Michael, Vito's youngest son and a decorated WWII Marine is also present
-              at the wedding.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="container">
-        <div class="front" style="background-image: url(src/assets/img/scarface.jpg)"></div>
-        <div class="back">
-          <div class="inner">
-            <h3>Scarface</h3>
-            <p>Tony Montana manages to leave Cuba during the Mariel exodus of 1980. He finds himself in a Florida
-              refugee camp but his friend Manny has a way out for them: undertake a contract killing and arrangements
-              will be made to get a green card.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="container">
-        <div class="front" style="background-image: url(src/assets/img/titanic.jpg)"></div>
-        <div class="back">
-          <div class="inner">
-            <h3>Titanic</h3>
-            <p>84 years later, a 100 year-old woman named Rose DeWitt Bukater tells the story to her granddaughter Lizzy
-              Calvert, Brock Lovett, Lewis Bodine, Bobby Buell and Anatoly Mikailavich on the Keldysh about her life set
-              in April 10th 1912, on a ship called Titanic.
-            </p>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -305,29 +156,35 @@
       Cut Club, you'll find the perfect place to let your cinephile side shine. Enter your email and details below to
       join the club!</p>
     <div class="form-container">
-      <form id="contact-form" method="post" action="/sendApplication">
+
+      <form class="page-form" id="club-form" method="post" action="/sendApplication">
         <div class="form-group">
           <label for="name">Name</label>
           <input type="text" name="name" id="name" placeholder="Enter your name..." minlength="2" required>
-          <!-- <div id="nameError" class="error-message"></div> -->
+          <div id="nameError" class="error-message"></div>
+
         </div>
 
         <div class="form-group">
           <label for="surname">Surname</label>
           <input type="text" name="surname" id="surname" placeholder="Enter your surname..." minlength="2" required>
-          <!-- <div id="surnameError" class="error-message"></div> -->
+
+          <div id="surnameError" class="error-message"></div>
+
         </div>
 
         <div class="form-group">
           <label for="mail">Email</label>
           <input type="email" name="mail" id="mail" placeholder="johnDoe@example.com" required>
-          <!-- <div id="emailError" class="error-message"></div> -->
+
+          <div id="emailError" class="error-message"></div>
         </div>
 
         <div class="form-group">
-          <label for="mensaje">Message</label>
-          <textarea name="mensaje" id="mensaje" placeholder="Leave a message for the club" minlength="10"></textarea>
-          <!-- <div id="messageError" class="error-message"></div> -->
+          <label for="message">Message</label>
+          <textarea name="message" id="message" placeholder="Leave a message for the club" minlength="10"></textarea>
+          <div id="messageError" class="error-message"></div>
+
         </div>
 
         <input type="submit" value="Join the Club!">
@@ -350,24 +207,33 @@
       soon as possible.</p>
 
     <div class="form-container">
-      <form id="contact-form" method="post" action="/sendApplication">
+
+      <form class="page-form" id="contact-form" method="post" action="/sendMessage">
         <div class="form-group">
           <label for="name">Name</label>
           <input type="text" name="name" id="name" placeholder="Enter your name..." minlength="2" required>
-          <!-- <div id="nameError" class="error-message"></div> -->
+          <div id="nameError" class="error-message"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="surname">Surname</label>
+          <input type="text" name="surname" id="surname" placeholder="Enter your surname..." minlength="2" required>
+          <div id="surnameError" class="error-message"></div>
         </div>
 
 
         <div class="form-group">
           <label for="mail">Email</label>
           <input type="email" name="mail" id="mail" placeholder="johnDoe@example.com" required>
-          <!-- <div id="emailError" class="error-message"></div> -->
+
+          <div id="emailError" class="error-message"></div>
         </div>
 
         <div class="form-group">
-          <label for="mensaje">Message</label>
-          <textarea name="mensaje" id="mensaje" placeholder="What's in your mind?" minlength="10"></textarea>
-          <!-- <div id="messageError" class="error-message"></div> -->
+          <label for="message">Message</label>
+          <textarea name="message" id="message" placeholder="What's in your mind?" minlength="10"></textarea>
+          <div id="messageError" class="error-message"></div>
+
         </div>
 
         <input type="submit" value="Send">
@@ -400,7 +266,9 @@
 
     <div class="blogInfo">
       <div class="blog-logo">
-        <img src="src/assets/img/cinema.png" alt="Cinema Paradiso Logo">
+
+        <img src="{{ url_for('static', filename='img/cinema.png') }}" alt="Cinema Paradiso Logo">
+
       </div>
       <div class="blog-name">
         <h3>Cinema Paradiso</h3>
@@ -410,10 +278,15 @@
 
 
   </footer>
-  <script src="src/assets/js/movie-carousel.js"></script>
-  <script src="src/assets/js/hamburger.js"></script>
-  <script src="src/assets/js/waves-bg.js"></script>
-  <script src="src/assets/js/movie-description.js"></script>
+
+  <script src="{{ url_for('static', filename='js/hamburger.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/movie-carousel.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/movie-description.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/movie-grid-mobile.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/waves-bg.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/validate-forms.js') }}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </body>
 
 </html>

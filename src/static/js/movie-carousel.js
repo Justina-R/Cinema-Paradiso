@@ -128,7 +128,7 @@ class CardCarousel extends DraggingEvent {
       const x = i - this.centerIndex;
       const scale = this.calcScale(x)
       const scale2 = this.calcScale2(x)
-      const zIndex = -(Math.abs(i - this.centerIndex))
+      const zIndex = this.centerIndex - Math.abs(i - this.centerIndex);
       
       const leftPos = this.calcPos(x, scale2)
      
