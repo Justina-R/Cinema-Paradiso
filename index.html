@@ -6,12 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cinema Paradiso | Movies and More</title>
 
+
   <link rel="stylesheet" href="{{ url_for('static', filename='css/forms.css') }}" media="all" />
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" media="all" />
   <link rel="stylesheet" href="{{ url_for('static', filename='css/movie-grid.css') }}" media="all" />
   <link rel="stylesheet" href="{{ url_for('static', filename='css/acordion.css') }}" media="all" />
   <link rel="stylesheet" href="{{ url_for('static', filename='css/carousel.css') }}" media="all" />
   <link rel="shortcut icon" href="{{ url_for('static', filename='img/cinema.png') }}" type="image/x-icon">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
@@ -20,7 +22,9 @@
   <header>
     
     <div class="logo" >
+
       <img src="{{ url_for('static', filename='img/cinema.png') }}" alt="Logo Cinema Paradiso">
+
     </div>
     <button class="hamburger" aria-label="Menu">
       ☰
@@ -47,6 +51,7 @@
     <h1>Cinema Paradiso</h1>
     <h2>The stuff that dreams are made of.</h2>
   </section>
+
   <div class="svg-container">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 4 1440 320" id="newM">
       <path fill="#5A7D7C" fill-opacity="1"
@@ -58,6 +63,7 @@
     <h3>New Movies</h3>
     <p>Every week, new movies are released—some great, others not so much. Here, you can check out the latest
       releases to stay up-to-date with the cinephile agenda.</p>
+
     <div class="container-cards">
       <div class="card-carousel">
         {% if newMovies %}
@@ -70,6 +76,7 @@
             </div>
           {% endfor %}
         {% endif %}
+
       </div>
       <a href="#" class="visuallyhidden card-controller">Carousel controller</a>
     </div>
@@ -87,6 +94,7 @@
       can always rely on <a href="#oldies">the good old classics</a>.</p>
     <div class="container-accordion">
       <div class="gallery-wrap">
+
         {% if topFives %}
           {% for topFive in topFives %}
             <div class="item" style="background-image: url('{{ topFive.get('poster_path') }}');">
@@ -97,6 +105,7 @@
             </div>
           {% endfor %} 
         {% endif %}
+
       </div>
     </div>
   </section>
@@ -111,6 +120,7 @@
     <h3>Oldies but Goldies</h3>
     <p>No matter the time or place, there are movies that never disappoint. If you're looking for a guaranteed hit,
       don't hesitate to follow these recommendations.</p>
+
     <div class="grid-container">
 
       {% if oldies %}
@@ -127,6 +137,7 @@
           {% endfor %} 
         {% endif %}
 
+
     </div>
   </section>
 
@@ -137,6 +148,7 @@
       </path>
     </svg>
   </div>
+
   <section class="mainSection" id="finalCut">
     <h3>The Final Cut Club</h3>
     <p>If you're looking for a group of people who love talking about movies 24/7, sharing and receiving
@@ -144,22 +156,27 @@
       Cut Club, you'll find the perfect place to let your cinephile side shine. Enter your email and details below to
       join the club!</p>
     <div class="form-container">
+
       <form class="page-form" id="club-form" method="post" action="/sendApplication">
         <div class="form-group">
           <label for="name">Name</label>
           <input type="text" name="name" id="name" placeholder="Enter your name..." minlength="2" required>
           <div id="nameError" class="error-message"></div>
+
         </div>
 
         <div class="form-group">
           <label for="surname">Surname</label>
           <input type="text" name="surname" id="surname" placeholder="Enter your surname..." minlength="2" required>
+
           <div id="surnameError" class="error-message"></div>
+
         </div>
 
         <div class="form-group">
           <label for="mail">Email</label>
           <input type="email" name="mail" id="mail" placeholder="johnDoe@example.com" required>
+
           <div id="emailError" class="error-message"></div>
         </div>
 
@@ -167,6 +184,7 @@
           <label for="message">Message</label>
           <textarea name="message" id="message" placeholder="Leave a message for the club" minlength="10"></textarea>
           <div id="messageError" class="error-message"></div>
+
         </div>
 
         <input type="submit" value="Join the Club!">
@@ -189,6 +207,7 @@
       soon as possible.</p>
 
     <div class="form-container">
+
       <form class="page-form" id="contact-form" method="post" action="/sendMessage">
         <div class="form-group">
           <label for="name">Name</label>
@@ -202,9 +221,11 @@
           <div id="surnameError" class="error-message"></div>
         </div>
 
+
         <div class="form-group">
           <label for="mail">Email</label>
           <input type="email" name="mail" id="mail" placeholder="johnDoe@example.com" required>
+
           <div id="emailError" class="error-message"></div>
         </div>
 
@@ -212,6 +233,7 @@
           <label for="message">Message</label>
           <textarea name="message" id="message" placeholder="What's in your mind?" minlength="10"></textarea>
           <div id="messageError" class="error-message"></div>
+
         </div>
 
         <input type="submit" value="Send">
@@ -244,7 +266,9 @@
 
     <div class="blogInfo">
       <div class="blog-logo">
+
         <img src="{{ url_for('static', filename='img/cinema.png') }}" alt="Cinema Paradiso Logo">
+
       </div>
       <div class="blog-name">
         <h3>Cinema Paradiso</h3>
@@ -254,6 +278,7 @@
 
 
   </footer>
+
   <script src="{{ url_for('static', filename='js/hamburger.js') }}"></script>
   <script src="{{ url_for('static', filename='js/movie-carousel.js') }}"></script>
   <script src="{{ url_for('static', filename='js/movie-description.js') }}"></script>
@@ -261,6 +286,7 @@
   <script src="{{ url_for('static', filename='js/waves-bg.js') }}"></script>
   <script src="{{ url_for('static', filename='js/validate-forms.js') }}"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </body>
 
 </html>

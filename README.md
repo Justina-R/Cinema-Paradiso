@@ -57,7 +57,7 @@ This project was built using the following tools and languages:
    Start the application with:
 
    ```bash
-   flask run
+   run flask
    ```
 
 6. **Open in your browser**:
